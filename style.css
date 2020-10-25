@@ -22,10 +22,6 @@ html{
     font-size: 62.5%;
 }
 
-body{
-    background-color: #F4F4F4;
-}
-
 ul li{
     list-style: none;
 }
@@ -71,6 +67,12 @@ h2{
     line-height: 2.9rem;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.readMore:hover,
+.readMore:focus{
+    background-color: #4A4a4A;
+    color: #F4F4F4;
 }
 
 h3{
@@ -148,7 +150,17 @@ h1{
 /* MAIN styles */
 
 /* CONTENT div style */
-.aboutFig,
+
+.content{
+    background-color: #F4F4F4;
+}
+
+
+.aboutFig{
+    float:right;
+    width:50%;
+}
+
 .missionFig{
     float:left;
     width: 50%;
@@ -157,8 +169,9 @@ h1{
 #about,
 #mission{
     float: left;
-    width: 30%;
-    margin: 30px 10%;
+    padding: 30px;
+    width: calc(50% - 100px);
+    margin: 0 50px 0;
 }
 
 #about h2,
@@ -206,8 +219,9 @@ h1{
 
 .mainNav ul{
     padding:150px 0;
-    width: 30%;
+        width: calc(100% / 3);
 }
+
 
 .mainNav li{
     display: inline-block;
@@ -244,18 +258,19 @@ h1{
     width: calc((100% - 60px) / 3);
 }
 
-.gallery li:nth-child(3n){
+.gallery li:nth-child(3){
     margin-right :0;
 }
 
 
 /* FOOTER styles */
 footer{
-    background-color:#4A4a4A ;
+    background-color:#1F2022 ;
 }
 
 .contactInfo{
     min-height: 30vh;
+    margin-bottom: 50px;
 }
 
 .contactInfo nav{
@@ -274,20 +289,95 @@ footer{
 
 /* FORM styles */
 #email{
-    padding: 10px 0;
+    display:block;
+    float: left;
+    padding: 10px;
     width:70%;
+}
+
+::placeholder{
+    font-size: 1.6rem;
 }
 
 button{
     background-color: #f2a11c;
-    border-color: #f2a11c;
-    padding: 11px 20px;
+    border:none;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    padding: 13px 20px;
 }
 
 /* COPYRIGHT styles */
-.footerCopyright{
-    padding: 20px 0;
-    background-color: #1F2022;
+.footerCopyright {
+    background-color: #000;
+}
+
+.footerCopyright p{
+    color: #4A4a4A;
     text-align: center;
-    color:#F4F4F4;
+    padding: 20px 0;
+}
+
+
+
+/* SMALL SCREEN Design styles */
+
+/* MOBILE styles */
+
+@media (max-width: 675px){
+
+
+    /* MAIN styles */
+    .aboutFig,
+    .missionFig,
+    .blogFig{
+        display: block;
+        width:100%;
+    }
+
+    #about, 
+    #mission,
+    .blogSection{
+        text-align: center;
+        padding: 50px 15px;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .blogPost{
+        padding: 30px;
+    }
+
+    .gallery li{
+        width: calc((100% - 30px) / 2);
+    }
+
+    .gallery li:nth-child(2){
+        margin-right:0;
+    }
+
+    .gallery li:nth-child(3){
+        display: none;
+    }
+
+    /* FOOTER styles */
+    footer nav{
+        width: 100%;
+    }
+
+    .contact,
+    .subscribe,
+    #email,
+    button{
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+        width:100%;
+    }
+
+    #email,
+    button{
+        font-size: 2.3rem;
+        padding: 20px 0;
+    }
 }
