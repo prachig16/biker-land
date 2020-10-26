@@ -8,7 +8,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-/* GLOBAL styles */
+/* GLOBAL styles----------------------------------------- */
 
 
 /* strip all spacing from elements */
@@ -27,11 +27,12 @@ ul li{
 }
 
 li a,
+.footerCopyright a,
 p{
     font-family: 'Catamaran', sans-serif;
     font-size: 2rem;
     font-weight: 400;
-    color:#F4F4F4;
+    color:rgb(244,244,244);
     line-height: 2.9rem;
     text-decoration: none;
 }
@@ -50,20 +51,20 @@ h2{
     font-family: 'Pacifico', cursive;
     font-size: 4.2rem;
     font-weight: 400;
-    color:#1F2022;
+    color:rgb(31,32,34) ;
 }
 
 .info{
-    color:#1F2022;
+    color:rgb(31,32,34) ;
 }
 
 .readMore{
     padding: 5px 15px;
-    background-color:#1F2022;
+    background-color:rgb(31,32,34) ;
     font-family: 'Catamaran', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color:#f2a11c;
+    color:rgb(242,161,28);
     line-height: 2.9rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -71,8 +72,8 @@ h2{
 
 .readMore:hover,
 .readMore:focus{
-    background-color: #4A4a4A;
-    color: #F4F4F4;
+    background-color: rgb(74,74,74) ;
+    color: rgb(244,244,244) ;
 }
 
 h3{
@@ -80,21 +81,32 @@ h3{
     font-size: 2.5rem;
     font-weight: 400;
     line-height: 2.9rem;
-    color:#f2a11c;
+    color:rgb(242,161,28);
     padding-bottom: 15px;
 }
 
 header nav,
 footer nav{
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
 }
 
-header a,
-footer a{
+header nav a,
+footer nav a{
     float:left;
-    padding: 20px;
+    text-align: center;
+    padding: 10px 5%;
+    width: calc(100% / 4);
 }
+a{
+    border-bottom: 1px solid transparent; 
+}
+
+a:hover,
+a:focus{
+    border-bottom: 1px solid rgba(242,161,28,0.8); 
+}
+
 
 .wrapper{
     max-width: 1240px;
@@ -107,7 +119,7 @@ footer a{
 
 
 
-/* HEADER styles */
+/* HEADER styles----------------------------------- */
 
 header{
     background-image: url(./biker-land-assets/image-1.jpg);
@@ -124,69 +136,121 @@ h1{
     font-family: 'Pacifico', cursive;
     font-size: 13rem;
     font-weight: 400;
-    color:#f2a11c;
+    color:rgb(242,161,28);
     text-align: center;
-    padding: 300px 0;
+    padding: 250px 0;
     margin: 0 auto;
 }
 
 .socialNav{
     position: absolute;
     top: 35vh; 
-    /* placing the icons at the half height of the min-height of header */
+    /* placing the icons at around half height of the min-height of header */
     right:0;
     width:5%;
 }
 
 .socialNav i{
     font-size: 3rem;
-    color: #f2a11c;
+    color: rgb(242,161,28);
     padding: 10px 0;
 }
 
+.socialNav a{
+    float:none;
+}
 
 
+/* SLIDING Menu styles ------------------------------------*/
+/* Credit: The code was written with reference to the code exercise completed during ConEd web dev  course*/
+.slidingMenuToggle{
+    visibility: hidden;
+}
+.slidingMenuToggle{
+    padding-top:20px;
+}
+.slidingMenu {
+    background: rgba(31,32,34,0.8);	
+    min-height: 100vh;
+    position: fixed;
+    right: -30%;
+    width: 30%;
+    transition: 0.5s;
+}
 
-/* MAIN styles */
+.slidingMenu a,
+.slidingMenu i {
+    color:rgba(242,161,28,0.8);
+    display: inline-block;
+    font-size: 3.5rem;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
 
+.slidingMenu a:hover,
+.slidingMenu i:hover,
+.slidingMenu a:focus,
+.slidingMenu i:focus{
+    border-bottom: 1px solid rgba(242,161,28,0.8);
+} 
+
+label {
+    position: fixed;
+    color:rgb(255,255,255);
+    font-size: 2.5rem;
+    top: 10px;
+    right: 10px;
+}
+
+
+/* MAIN styles ------------------------------------------*/
 /* CONTENT div style */
 
 .content{
-    background-color: #F4F4F4;
+    background-color: rgb(244,244,244) ;
 }
-
 
 .aboutFig{
     float:right;
-    width:50%;
+    background-image: url("./biker-land-assets/image-2.jpg");
 }
 
 .missionFig{
-    float:left;
-    width: 50%;
+    float: left;;
+    background-image: url("./biker-land-assets/image-7.jpg");
 }
 
-#about,
-#mission{
+.aboutFig,
+.missionFig{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:400px;
+    width:50%;
+}
+
+.aboutInfo,
+.missionInfo{
     float: left;
     padding: 30px;
     width: calc(50% - 100px);
     margin: 0 50px 0;
 }
 
-#about h2,
-#mission h2{
+.aboutInfo h2,
+.missionInfo h2{
     padding: 20px 0;
 }
 
-#about p,
-#mission p{
+.aboutInfo p,
+.missionInfo p{
     padding-bottom: 30px;
 }
 
-/* BLOG div styles */
+/* BLOG div styles----------------------------------- */
 .blogPost{
-    color: #F4F4F4;
+    color:rgb(244,244,244);
     padding: 100px 0;
 }
 
@@ -207,7 +271,7 @@ h1{
 }
 
 
-/* MAIN NAV styles */
+/* MAIN NAV styles-------------------------------------- */
 .mainNav{
     background-image: url(./biker-land-assets/image-5.jpg);
     min-height: 40vh;
@@ -218,8 +282,9 @@ h1{
 }
 
 .mainNav ul{
+    text-align: center;
     padding:150px 0;
-        width: calc(100% / 3);
+    width: calc(100% / 3);
 }
 
 
@@ -234,18 +299,18 @@ h1{
 }
 
 .mainNav i{
-    color:#ffffff;
+    color:rgb(255,255,255);
     font-size: 4rem;
     padding: 30px;
 }
 
 .mainNav a{
-    color: #f2a11c;
+    color: rgb(242,161,28);
     font-size: 2.5rem;
     text-align: center;
 }
 
-/* GALLERY styles */
+/* GALLERY styles---------------------------- */
 
 .gallery h2{
     text-align: center;
@@ -263,18 +328,23 @@ h1{
 }
 
 
-/* FOOTER styles */
+/* FOOTER styles----------------------------- */
 footer{
-    background-color:#1F2022 ;
+    background-color:rgb(31,32,34) ;
 }
 
 .contactInfo{
     min-height: 30vh;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .contactInfo nav{
     padding: 20px 0;
+    background-color: rgb(31,32,34);
+}
+
+.container{
+    padding-top:20px;
 }
 
 .contact,
@@ -287,7 +357,7 @@ footer{
     padding-bottom: 10px;
 }
 
-/* FORM styles */
+/* FORM styles--------------------- */
 #email{
     display:block;
     float: left;
@@ -300,32 +370,68 @@ footer{
 }
 
 button{
-    background-color: #f2a11c;
+    background-color: rgb(242,161,28);
     border:none;
     text-transform: uppercase;
     vertical-align: bottom;
     padding: 13px 20px;
 }
 
-/* COPYRIGHT styles */
-.footerCopyright {
+/* COPYRIGHT styles--------------------- */
+.footerCopyright{
     background-color: #000;
-}
-
-.footerCopyright p{
-    color: #4A4a4A;
-    text-align: center;
     padding: 20px 0;
 }
 
+.footerCopyright p,
+.footerCopyright a{
+    color: rgb(74,74,74) ;
+    text-align: center;
+}
 
 
-/* SMALL SCREEN Design styles */
+
+/* SMALL SCREEN Design styles---------------------------- */
+
+
+/* 1175px Breakpoint for the MAIN background images */
+
+@media (max-width:1175px){
+    .aboutFig,
+    .missionFig{
+        height: 650px;
+    }
+}
 
 /* MOBILE styles */
 
-@media (max-width: 675px){
+@media (max-width: 770px){
 
+    /* SLIDING Menu Styes */
+    header{
+        background-image:url(./biker-land-assets/image-1-mobile@2x.jpg);
+    }
+
+    h1{
+        font-size: 8rem;
+    }
+
+    .topNav,
+    .socialNav{
+        display:none;
+    }
+
+    .slidingMenuToggle{
+        visibility: visible;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked + .slidingMenu {
+        right: 0;
+    }
 
     /* MAIN styles */
     .aboutFig,
@@ -335,8 +441,8 @@ button{
         width:100%;
     }
 
-    #about, 
-    #mission,
+    .aboutInfo, 
+    .missionInfo,
     .blogSection{
         text-align: center;
         padding: 50px 15px;
