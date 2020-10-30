@@ -173,8 +173,8 @@ h1{
     background: rgba(31,32,34,0.8);	
     min-height: 100vh;
     position: fixed;
-    right: -30%;
-    width: 30%;
+    right: -35%;
+    width: 35%;
     transition: 0.5s;
 }
 
@@ -452,6 +452,7 @@ button{
     
     .blogPost{
         padding: 30px;
+        width: 100%;
     }
 
     .gallery li{
